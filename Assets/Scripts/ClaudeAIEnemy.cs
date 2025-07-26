@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -216,13 +217,13 @@ public class EnemyAI : MonoBehaviour
     void CheckMovement()
     {
         // Check if the enemy is moving
-        float movementThreshold = 0.1f;
+        float movementThreshold = 0.01f;
         Vector3 currentPosition = transform.position;
         bool wasMoving = isMoving;
 
         isMoving = Vector3.Distance(currentPosition, lastPosition) > movementThreshold;
         lastPosition = currentPosition;
-
+        Debug.Log(isMoving);
         // Update animator walking parameter
         if (animator != null && wasMoving != isMoving)
         {
