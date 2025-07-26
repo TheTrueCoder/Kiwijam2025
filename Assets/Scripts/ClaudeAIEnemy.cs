@@ -21,6 +21,13 @@ public class EnemyAI : MonoBehaviour
     private float lastAttackTime;
     public GameObject camera_;
     public GameObject player_;
+
+    //ignore this just stuff for moving the camera
+    public float duration = 1.0f;
+    private float elapsedTime = 0f;
+    private bool isMoving_ = false;
+    public Transform target;
+
     // AI States
     private enum AIState
     {
@@ -75,6 +82,23 @@ public class EnemyAI : MonoBehaviour
             case AIState.Attacking:
                 HandleAttackingState(distanceToPlayer);
                 break;
+
+        }
+        if (isMoving_)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = Mathf.Clamp01(elapsedTime / 0.2f);
+
+            // Lerp position
+            camera_.transform.position = Vector3.Lerp(camera_.transform.position, target.position, t);
+
+            // Optional: Lerp rotation
+            camera_.transform.rotation = Quaternion.Slerp(camera_.transform.rotation, target.rotation, t);
+
+            if (t >= 1f)
+            {
+                isMoving_ = false;
+            }
         }
     }
 
@@ -211,6 +235,7 @@ public class EnemyAI : MonoBehaviour
             
             animator.SetTrigger("attack");
             player_.SendMessage("BeStill");
+            isMoving_ = true;  
         }
 
         // Add your attack logic here (damage, effects, etc.)
