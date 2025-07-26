@@ -34,6 +34,7 @@ public class movement : MonoBehaviour
 
             UnityEngine.Cursor.lockState = CursorLockMode.None;
             UnityEngine.Cursor.visible = true;
+            Application.Quit();
         }
         //Get input direction
         _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
