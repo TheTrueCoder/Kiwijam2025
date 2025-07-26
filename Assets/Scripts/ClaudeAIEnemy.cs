@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     [Header("AI Behavior Settings")]
-    public float detectionRange = 10f;
+    public float detectionRange = 50f;
     public float attackRange = 1f;
     public float wanderRadius = 5f;
     public float wanderTimer = 3f;
@@ -19,7 +19,8 @@ public class EnemyAI : MonoBehaviour
     private Vector3 startPosition;
     private float timer;
     private float lastAttackTime;
-
+    public GameObject camera_;
+    public GameObject player_;
     // AI States
     private enum AIState
     {
@@ -207,7 +208,9 @@ public class EnemyAI : MonoBehaviour
         // Trigger attack animation
         if (animator != null)
         {
+            
             animator.SetTrigger("attack");
+            player_.SendMessage("BeStill");
         }
 
         // Add your attack logic here (damage, effects, etc.)
@@ -223,11 +226,12 @@ public class EnemyAI : MonoBehaviour
 
         isMoving = Vector3.Distance(currentPosition, lastPosition) > movementThreshold;
         lastPosition = currentPosition;
-        Debug.Log(isMoving);
+       
         // Update animator walking parameter
         if (animator != null && wasMoving != isMoving)
         {
             animator.SetBool("walking", isMoving);
+            
         }
     }
 

@@ -30,10 +30,10 @@ public class movement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            
-                
-                UnityEngine.Cursor.lockState = CursorLockMode.None;
-                UnityEngine.Cursor.visible = true;
+
+
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
+            UnityEngine.Cursor.visible = true;
         }
         //Get input direction
         _input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
@@ -56,5 +56,11 @@ public class movement : MonoBehaviour
         }
 
     }
-    
+
+
+    public void BeStill()
+    {
+        canLook = false;
+        canMove = false;
+    }
 }
