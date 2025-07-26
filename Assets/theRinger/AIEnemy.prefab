@@ -102,7 +102,7 @@ MonoBehaviour:
   camera_: {fileID: 0}
   player_: {fileID: 0}
   duration: 0.5
-  target: {fileID: 0}
+  target: {fileID: 3633321387412268685}
 --- !u!1 &8054834383417623471
 GameObject:
   m_ObjectHideFlags: 0

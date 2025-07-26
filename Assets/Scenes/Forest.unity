@@ -251,11 +251,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d691eabe022617644b5a48dfe7574b57, type: 3}
---- !u!4 &381343286 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3633321387412268685, guid: 371223c75c2da0d45bff7ed70f0c9693, type: 3}
-  m_PrefabInstance: {fileID: 1162073524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &459130103
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,7 +1034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4898656612773811797, guid: 371223c75c2da0d45bff7ed70f0c9693, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 505.9
+      value: 533
       objectReference: {fileID: 0}
     - target: {fileID: 4898656612773811797, guid: 371223c75c2da0d45bff7ed70f0c9693, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1073,10 +1068,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIEnemy
       objectReference: {fileID: 0}
-    - target: {fileID: 7190136924688489516, guid: 371223c75c2da0d45bff7ed70f0c9693, type: 3}
-      propertyPath: target
-      value: 
-      objectReference: {fileID: 2137688040}
     - target: {fileID: 7190136924688489516, guid: 371223c75c2da0d45bff7ed70f0c9693, type: 3}
       propertyPath: camera_
       value: 
@@ -1452,11 +1443,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!4 &2137688040 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3633321387412268685, guid: 371223c75c2da0d45bff7ed70f0c9693, type: 3}
-  m_PrefabInstance: {fileID: 1162073524}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
